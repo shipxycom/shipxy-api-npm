@@ -1,0 +1,25 @@
+{
+  "name": "shipxy-api",
+  "version": "1.0.11",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "亿海蓝",
+    "船讯网",
+    "Elane",
+    "shipxy",
+    "API",
+    "SDK"
+  ],
+  "author": "249898979@qq.com",
+  "license": "ISC",
+  "description": "亿海蓝sdk https://www.shipxy.com/",
+  "devDependencies": {
+    "jest": "^30.0.3"
+  },
+  "dependencies": {
+    "axios": "^1.10.0"
+  }
+}
