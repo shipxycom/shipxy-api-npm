@@ -9,11 +9,11 @@
 ## 示例用法
 ```
 // CommonJS
-const shipxy = require('shipxy-api'); 
+const Shipxy = require('shipxy-api'); 
 ```
 ```
 // ESM
-import shipxy from 'shipxy-api' 
+import Shipxy from 'shipxy-api' 
 ```
 ```
 const key = "请从 API控制台 申请";
@@ -22,7 +22,7 @@ async function GetManyShipFn() {
     let params = {
         key: key, mmsis: "413961925,477232800,477172700"
     }
-    let result = await shipxy.GetManyShip(params)
+    let result = await Shipxy.GetManyShip(params)
     console.log(result);
 }
 

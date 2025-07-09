@@ -289,11 +289,11 @@ const key = "484db43a65ec4f87b5b4dcc69e586bf7";
 //     console.log(result);
 // });
 
-test('DeleteArea', async () => {
-    let params = {
-        key,
-        area_id: "a8419b7c-7833-4eeb-84f6-3433928c8612",
-    }
-    let result = await shipxy.DeleteArea(params)
-    console.log(result);
-});
+// test('DeleteArea', async () => {
+//     let params = {
+//         key,
+//         area_id: "a8419b7c-7833-4eeb-84f6-3433928c8612",
+//     }
+//     let result = await shipxy.DeleteArea(params)
+//     console.log(result);
+// });

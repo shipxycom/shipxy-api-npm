@@ -3,7 +3,7 @@
  * 作者：White
  */
 
-const baseMethod = require('./api/baseMethod'); // 1船舶查询
+const baseMethod = require('./api/baseMethod'); // 0基础方法
 const shipQuery = require('./api/shipQuery'); // 1船舶查询
 const portQuery = require('./api/portQuery'); // 2港口查询
 const historyAction = require('./api/historyAction'); // 3历史行为
