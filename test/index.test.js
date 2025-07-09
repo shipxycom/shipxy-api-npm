@@ -1,14 +1,15 @@
 const Shipxy = require('../index');
 
-const key = "484db43a65ec4f87b5b4dcc69e586bf7";
+// const { key } = require('../key');
+const key = "请从 API控制台 申请";
 
-// test('getMethod', async () => {
-//   let params = {
-//     key: key, keywords: "coco", max: 2
-//   }
-//   let result = await Shipxy.getMethod("SearchShip", params)
-//   console.log(result);
-// });
+test('getMethod', async () => {
+  let params = {
+    key: key, keywords: "coco", max: 2
+  }
+  let result = await Shipxy.getMethod("SearchShip", params)
+  console.log(result);
+});
 
 // test('postMethod', async () => {
 //   let params = {
