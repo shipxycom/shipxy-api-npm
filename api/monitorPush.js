@@ -149,6 +149,7 @@ async function UpdateFleetShip({ key, fleet_id, mmsis }) {
  * https://hiiau7lsqq.feishu.cn/wiki/A3UBwJ7pViozTskSFwPcJ4Ldnze
  * @param {*} key 授权码：必填，船讯网授权码，验证服务权限
  * @param {*} fleet_id 船队id：必填，船队的ID，用来对船队信息进行维护的唯一标识。
+ * @param {*} mmsis 船舶清单：必填，添加船队管理的船舶，mmsi编号，以英文逗号隔开。批量覆盖原有的船舶列表，替代式更新。
  * @returns 查看在线文档
  */
 async function DeleteFleetShip({ key, fleet_id, mmsis }) {
