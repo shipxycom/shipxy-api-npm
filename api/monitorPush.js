@@ -201,7 +201,7 @@ async function AddArea({ key, area_bounds, area_name, url, filter_type, ship_typ
 
 
 /**
- * 9监控推送-9.4区域监控推送-区域创建
+ * 9监控推送-9.4区域监控推送-区域更新
  * https://hiiau7lsqq.feishu.cn/wiki/A3UBwJ7pViozTskSFwPcJ4Ldnze
  * @param {*} key 授权码：必填，船讯网授权码，验证服务权限
  * @param {*} area_id 区域的ID：必填，区域的id，唯一标识，用来后续对区域的删改查
