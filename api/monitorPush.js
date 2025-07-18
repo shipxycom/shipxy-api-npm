@@ -10,7 +10,7 @@ const { apiUrl } = require('../config');
 
 /**
  * 9监控推送-9.1监控船队管理-设置监控船舶列表-创建船队
- * https://hiiau7lsqq.feishu.cn/wiki/A3UBwJ7pViozTskSFwPcJ4Ldnze
+ * https://hiiau7lsqq.feishu.cn/wiki/RtL0w0iHDioEP6kvZcScIC95nSe
  * @param {*} key 授权码：必填，船讯网授权码，验证服务权限
  * @param {*} fleet_name 船队名称：必填，为您创建的船队起名，用来后续查询和区分
  * @param {*} mmsis 船舶清单：必填，添加船队下管理的船舶信息，输入多个mmsi编号，用英文逗号隔开
@@ -34,7 +34,7 @@ async function AddFleet({ key, fleet_name, mmsis, monitor }) {
 
 /**
  * 9监控推送-9.1监控船队管理-设置监控船舶列表-更新船队信息
- * https://hiiau7lsqq.feishu.cn/wiki/A3UBwJ7pViozTskSFwPcJ4Ldnze
+ * https://hiiau7lsqq.feishu.cn/wiki/RtL0w0iHDioEP6kvZcScIC95nSe
  * @param {*} key 授权码：必填，船讯网授权码，验证服务权限
  * @param {*} fleet_id 船队id：必填，船队的ID，用来对船队信息进行维护的唯一标识。
  * @param {*} fleet_name 船队名称：非必填，输入名称则更新船队名称
@@ -61,7 +61,7 @@ async function UpdateFleet({ key, fleet_id, fleet_name, mmsis, monitor }) {
 
 /**
  * 9监控推送-9.1监控船队管理-设置监控船舶列表-查询船队
- * https://hiiau7lsqq.feishu.cn/wiki/A3UBwJ7pViozTskSFwPcJ4Ldnze
+ * https://hiiau7lsqq.feishu.cn/wiki/RtL0w0iHDioEP6kvZcScIC95nSe
  * @param {*} key 授权码：必填，船讯网授权码，验证服务权限
  * @param {*} fleet_id 船队id：必填，船队的ID，用来对船队信息进行维护的唯一标识。
  * @returns 查看在线文档
@@ -81,7 +81,7 @@ async function GetFleet({ key, fleet_id }) {
 
 /**
  * 9监控推送-9.1监控船队管理-设置监控船舶列表-删除船队
- * https://hiiau7lsqq.feishu.cn/wiki/A3UBwJ7pViozTskSFwPcJ4Ldnze
+ * https://hiiau7lsqq.feishu.cn/wiki/RtL0w0iHDioEP6kvZcScIC95nSe
  * @param {*} key 授权码：必填，船讯网授权码，验证服务权限
  * @param {*} fleet_id 船队id：必填，船队的ID，用来对船队信息进行维护的唯一标识。
  * @returns 查看在线文档
@@ -101,7 +101,7 @@ async function DeleteFleet({ key, fleet_id }) {
 
 /**
  * 9监控推送-9.1监控船队管理-设置监控船舶列表-船队船舶增加
- * https://hiiau7lsqq.feishu.cn/wiki/A3UBwJ7pViozTskSFwPcJ4Ldnze
+ * https://hiiau7lsqq.feishu.cn/wiki/RtL0w0iHDioEP6kvZcScIC95nSe
  * @param {*} key 授权码：必填，船讯网授权码，验证服务权限
  * @param {*} fleet_id 船队id：必填，船队的ID，用来对船队信息进行维护的唯一标识。
  * @param {*} mmsis 船舶清单：必填，添加船队管理的船舶，mmsi编号，以英文逗号隔开。增量更新，不变动原有船队船舶，输入的mmsi编号与原有重复时，新填入的不会增加到船队中。
@@ -124,7 +124,7 @@ async function AddFleetShip({ key, fleet_id, mmsis }) {
 
 /**
  * 9监控推送-9.1监控船队管理-设置监控船舶列表-船队船舶批量更新
- * https://hiiau7lsqq.feishu.cn/wiki/A3UBwJ7pViozTskSFwPcJ4Ldnze
+ * https://hiiau7lsqq.feishu.cn/wiki/RtL0w0iHDioEP6kvZcScIC95nSe
  * @param {*} key 授权码：必填，船讯网授权码，验证服务权限
  * @param {*} fleet_id 船队id：必填，船队的ID，用来对船队信息进行维护的唯一标识。
  * @param {*} mmsis 船舶清单：必填，添加船队管理的船舶，mmsi编号，以英文逗号隔开。批量覆盖原有的船舶列表，替代式更新。
@@ -146,7 +146,7 @@ async function UpdateFleetShip({ key, fleet_id, mmsis }) {
 
 /**
  * 9监控推送-9.1监控船队管理-设置监控船舶列表-船队船舶删除
- * https://hiiau7lsqq.feishu.cn/wiki/A3UBwJ7pViozTskSFwPcJ4Ldnze
+ * https://hiiau7lsqq.feishu.cn/wiki/RtL0w0iHDioEP6kvZcScIC95nSe
  * @param {*} key 授权码：必填，船讯网授权码，验证服务权限
  * @param {*} fleet_id 船队id：必填，船队的ID，用来对船队信息进行维护的唯一标识。
  * @param {*} mmsis 船舶清单：必填，添加船队管理的船舶，mmsi编号，以英文逗号隔开。批量覆盖原有的船舶列表，替代式更新。
@@ -169,7 +169,7 @@ async function DeleteFleetShip({ key, fleet_id, mmsis }) {
 
 /**
  * 9监控推送-9.4区域监控推送-区域创建
- * https://hiiau7lsqq.feishu.cn/wiki/A3UBwJ7pViozTskSFwPcJ4Ldnze
+ * https://hiiau7lsqq.feishu.cn/wiki/A0hSwImnBiuKeMkkXOmcfEA9nBe
  * @param {*} key 授权码：必填，船讯网授权码，验证服务权限
  * @param {*} area_bounds 区域范围：必填，经纬度逗号分隔，多个点减号分隔，如： （lng,lat - lng,lat - lng,lat ）经纬度数，多个经纬度坐标点必须按照顺时针或逆时针依次输入。
  * @param {*} area_name 区域名称：必填，为您创建的区域起名，用来后续查询和区分
@@ -202,7 +202,7 @@ async function AddArea({ key, area_bounds, area_name, url, filter_type, ship_typ
 
 /**
  * 9监控推送-9.4区域监控推送-区域更新
- * https://hiiau7lsqq.feishu.cn/wiki/A3UBwJ7pViozTskSFwPcJ4Ldnze
+ * https://hiiau7lsqq.feishu.cn/wiki/A0hSwImnBiuKeMkkXOmcfEA9nBe
  * @param {*} key 授权码：必填，船讯网授权码，验证服务权限
  * @param {*} area_id 区域的ID：必填，区域的id，唯一标识，用来后续对区域的删改查
  * @param {*} area_bounds 区域范围：非必填，经纬度逗号分隔，多个点减号分隔，如： （lng,lat - lng,lat - lng,lat ）经纬度数，多个经纬度坐标点必须按照顺时针或逆时针依次输入。
@@ -236,7 +236,7 @@ async function UpdateArea({ key, area_id, area_bounds, area_name, url, filter_ty
 
 /**
  * 9监控推送-9.4区域监控推送-区域查询
- * https://hiiau7lsqq.feishu.cn/wiki/A3UBwJ7pViozTskSFwPcJ4Ldnze
+ * https://hiiau7lsqq.feishu.cn/wiki/A0hSwImnBiuKeMkkXOmcfEA9nBe
  * @param {*} key 授权码：必填，船讯网授权码，验证服务权限
  * @param {*} area_id 区域的ID：必填，区域的id，唯一标识，用来后续对区域的删改查
  * @returns 查看在线文档
@@ -256,7 +256,7 @@ async function GetArea({ key, area_id }) {
 
 /**
  * 9监控推送-9.4区域监控推送-区域删除
- * https://hiiau7lsqq.feishu.cn/wiki/A3UBwJ7pViozTskSFwPcJ4Ldnze
+ * https://hiiau7lsqq.feishu.cn/wiki/A0hSwImnBiuKeMkkXOmcfEA9nBe
  * @param {*} key 授权码：必填，船讯网授权码，验证服务权限
  * @param {*} area_id 区域的ID：必填，区域的id，唯一标识，用来后续对区域的删改查
  * @returns 查看在线文档
