@@ -134,7 +134,83 @@ async function GetTideData({ key, port_code, start_date, end_date }) {
 }
 
 
+/**
+ * 查询全球潮汐观测站列表。
+ * 文档：船讯网 V3 6.5 全球港口潮汐 / 6.6 新全球气象 / 6.7 历史气象记录。
+ * 所有参数必填；气象 observation_time 返回 UTC 时间。
+ */
+async function GetGlobalTides({ key }) {
+    const res = await axios({
+        method: 'get',
+        url: apiUrl + '/GetGlobalTides',
+        params: { key },
+    });
+    return res.data;
+}
+
+/**
+ * 查询全球观测站潮汐。port_code 为观测站 ID；日期 yyyy-MM-dd，单次不超过90天，未来不超过30天。
+ * 文档：船讯网 V3 6.5 全球港口潮汐 / 6.6 新全球气象 / 6.7 历史气象记录。
+ * 所有参数必填；气象 observation_time 返回 UTC 时间。
+ */
+async function GetGlobalTideData({ key, port_code, start_date, end_date }) {
+    const res = await axios({
+        method: 'get',
+        url: apiUrl + '/GetGlobalTideData',
+        params: { key, port_code, start_date, end_date },
+    });
+    return res.data;
+}
+
+/**
+ * 查询 WGS84 坐标的实时大气和海洋气象。
+ * 文档：船讯网 V3 6.5 全球港口潮汐 / 6.6 新全球气象 / 6.7 历史气象记录。
+ * 所有参数必填；气象 observation_time 返回 UTC 时间。
+ */
+async function CurrentWeather({ key, lng, lat }) {
+    const res = await axios({
+        method: 'get',
+        url: apiUrl + '/CurrentWeather',
+        params: { key, lng, lat },
+    });
+    return res.data;
+}
+
+/**
+ * 查询 WGS84 坐标的未来大气和海洋气象预报。
+ * 文档：船讯网 V3 6.5 全球港口潮汐 / 6.6 新全球气象 / 6.7 历史气象记录。
+ * 所有参数必填；气象 observation_time 返回 UTC 时间。
+ */
+async function FutureWeather({ key, lng, lat }) {
+    const res = await axios({
+        method: 'get',
+        url: apiUrl + '/FutureWeather',
+        params: { key, lng, lat },
+    });
+    return res.data;
+}
+
+/**
+ * 查询历史气象。时间为北京时间 yyyy-MM-dd HH:mm:ss，单次不超过1个月，开始不早于3年前，结束须在24小时前。
+ * 文档：船讯网 V3 6.5 全球港口潮汐 / 6.6 新全球气象 / 6.7 历史气象记录。
+ * 所有参数必填；气象 observation_time 返回 UTC 时间。
+ */
+async function HistoryWeather({ key, lng, lat, start_time, end_time }) {
+    const res = await axios({
+        method: 'get',
+        url: apiUrl + '/HistoryWeather',
+        params: { key, lng, lat, start_time, end_time },
+    });
+    return res.data;
+}
+
 module.exports = {
+    GetGlobalTides,
+    GetGlobalTideData,
+    CurrentWeather,
+    FutureWeather,
+    HistoryWeather,
+
     GetWeatherByPoint,
     GetWeather,
     GetAllTyphoon,
