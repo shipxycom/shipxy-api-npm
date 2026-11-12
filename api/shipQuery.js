@@ -19,7 +19,7 @@ const { apiUrl } = require('../config');
 async function SearchShip({ key, keywords, max }) {
     let baseUrl = apiUrl + "/SearchShip"
     let res = await axios({
-        method: 'post',
+        method: 'get',
         url: baseUrl,
         params: {
             key: key,
@@ -118,8 +118,9 @@ async function GetSurRoundingShip({ key, mmsi }) {
  * @param {*} output 输出格式：选填，输出数据格式类型选择：0为二进制 Base64 编码，1为json格式，默认为1
  * @param {*} scode 会话令牌：选填，当区域范围船舶单次请求无法全部返回时，可以根据首次请求返回的scode再次请求剩余的数据，保证全部返回。
  * @returns 查看在线文档
+ * @param {*} data_type 0: ships (default), 1: aids to navigation, 2: net buoys, 3: ships + aids, 4: ships + buoys, 5: all. Non-ship data requires output=1.
  */
-async function GetAreaShip({ key, region, output, scode }) {
+async function GetAreaShip({ key, region, output, scode, data_type }) {
     let baseUrl = apiUrl + "/GetAreaShip"
     let res = await axios({
         method: 'get',
@@ -128,7 +129,8 @@ async function GetAreaShip({ key, region, output, scode }) {
             key: key,
             region: region,
             output: output,
-            scode: scode
+            scode: scode,
+            data_type: data_type
         },
     });
     return res.data

@@ -39,7 +39,7 @@ async function SearchPort({ key, keywords, max }) {
  * @param {*} ship_type 船舶类型：选填，筛选船舶的类型，船舶类型清单请参考文档，不填写时返回全部船舶。
  * @returns 查看在线文档
  */
-async function GetBerthShips({ key, port_code, ship_type }) {
+async function GetBerthShips({ key, port_code, ship_type, search_type }) {
     let baseUrl = apiUrl + "/GetBerthShips"
     let res = await axios({
         method: 'get',
@@ -48,6 +48,7 @@ async function GetBerthShips({ key, port_code, ship_type }) {
             key: key,
             port_code: port_code,
             ship_type: ship_type,
+            search_type: search_type,
         },
     });
     return res.data
@@ -62,7 +63,7 @@ async function GetBerthShips({ key, port_code, ship_type }) {
  * @param {*} ship_type 船舶类型：选填，筛选船舶的类型，船舶类型清单请参考文档，不填写时返回全部船舶。
  * @returns 查看在线文档
  */
-async function GetAnchorShips({ key, port_code, ship_type }) {
+async function GetAnchorShips({ key, port_code, ship_type, search_type }) {
     let baseUrl = apiUrl + "/GetAnchorShips"
     let res = await axios({
         method: 'get',
@@ -71,6 +72,7 @@ async function GetAnchorShips({ key, port_code, ship_type }) {
             key: key,
             port_code: port_code,
             ship_type: ship_type,
+            search_type: search_type,
         },
     });
     return res.data

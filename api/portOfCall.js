@@ -109,7 +109,7 @@ async function GetShipStatus({ key, mmsi, imo, ship_name, call_sign, time_zone }
  * https://hiiau7lsqq.feishu.cn/wiki/G9BDwzNPqiXdyckzFrBctxYUnHd
  * @param {*} key 授权码：必填，船讯网授权码，验证服务权限
  * @param {*} port_code 港口标准code：必填，港口标准五位码
- * @param {*} start_time 开始时间：必填，历史靠港记录开始时间，Unix 时间戳start_time与end_time为必填项，表示查询[start_time，end_time]之间的结果，最多1次只能查询1年（366天）的靠港记录.
+ * @param {*} start_time 开始时间：必填，历史靠港记录开始时间，Unix 时间戳start_time与end_time为必填项，表示查询[start_time，end_time]之间的结果，最多1次只能查询1周的靠港记录.
  * @param {*} end_time 结束时间：必填，历史靠港记录结束时间，unix 时间戳。
  * @param {*} type 查询类型：选填，查询类型（选填）。1，按照ATA（到港时间）查询；2，按照ATD（离港时间）查询。默认值：1
  * @param {*} time_zone 时区：选填，时间类型(选填)。 1当地时区，如果不存在，使用零时区；2北京时区；3零时区，即格林尼治平均时。默认值：2。
