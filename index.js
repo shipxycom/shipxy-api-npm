@@ -13,7 +13,10 @@ const weather = require('./api/weather'); // 6气象天气
 const warning = require('./api/warning'); // 8海事数据
 const monitorPush = require('./api/monitorPush'); // 9监控推送
 
+const chart = require('./api/chart');
+
 module.exports = {
+    ...chart,
     ...baseMethod,
     ...shipQuery,
     ...portQuery,

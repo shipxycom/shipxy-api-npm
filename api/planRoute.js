@@ -13,12 +13,13 @@ const { apiUrl } = require('../config');
  * https://hiiau7lsqq.feishu.cn/wiki/A3UBwJ7pViozTskSFwPcJ4Ldnze
  * @param {*} key 授权码：必填，船讯网授权码，验证服务权限
  * @param {*} start_point 起始点：必填，出发的位置点，lng,lat
- * @param {*} end_point 结束点：必填，到达的位置点，lng,lat
+ * @param {*} end_point 结束点：与end_port_code至少填一项，lng,lat。两项都填时优先终点港口。
+ * @param {*} end_port_code 终点港口：港口五位码。
  * @param {*} avoid 绕航节点：非必填，需要避让的节点，id详见附录7 。绕航多节点时，不同id之间使用逗号分隔；不填则不绕航；一次请求绕航的节点控制在10个以内。
  * @param {*} through 查询类型：非必填，必经的点，lng,lat - lng,lat；多点之间用“-”连接；不填则不必经；一次请求途经的节点控制在30个以内。
  * @returns 查看在线文档
  */
-async function PlanRouteByPoint({ key, start_point, end_point, avoid, through }) {
+async function PlanRouteByPoint({ key, start_point, end_point, avoid, through, end_port_code }) {
     let baseUrl = apiUrl + "/PlanRouteByPoint"
     let res = await axios({
         method: 'get',
@@ -27,6 +28,7 @@ async function PlanRouteByPoint({ key, start_point, end_point, avoid, through })
             key: key,
             start_point: start_point,
             end_point: end_point,
+            end_port_code: end_port_code,
             avoid: avoid,
             through: through,
         },

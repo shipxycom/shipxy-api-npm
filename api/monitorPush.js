@@ -89,7 +89,7 @@ async function GetFleet({ key, fleet_id }) {
 async function DeleteFleet({ key, fleet_id }) {
     let baseUrl = apiUrl + "/DeleteFleet"
     let res = await axios({
-        method: 'get',
+        method: 'post',
         url: baseUrl,
         params: {
             key,
@@ -274,7 +274,29 @@ async function DeleteArea({ key, area_id }) {
     return res.data
 }
 
+/** 航速提醒独立订阅服务，单位为节/分钟。speed_duration省略时由服务端默认5分钟。 */
+async function SubShipAlertOfSpeed({ key, mmsi, speed_limit, speed_duration }) {
+    const res = await axios({ method: 'get', url: apiUrl + '/SubShipAlertOfSpeed', params: { key, mmsi, speed_limit, speed_duration } });
+    return res.data;
+}
+
+/** 航速提醒独立订阅服务，单位为节/分钟。speed_duration省略时由服务端默认5分钟。 */
+async function UnsubShipAlertOfSpeed({ key, mmsi }) {
+    const res = await axios({ method: 'get', url: apiUrl + '/UnsubShipAlertOfSpeed', params: { key, mmsi } });
+    return res.data;
+}
+
+/** 航速提醒独立订阅服务，单位为节/分钟。speed_duration省略时由服务端默认5分钟。 */
+async function SearchSubShipAlertOfSpeed({ key }) {
+    const res = await axios({ method: 'get', url: apiUrl + '/SearchSubShipAlertOfSpeed', params: { key } });
+    return res.data;
+}
+
 module.exports = {
+    SubShipAlertOfSpeed,
+    UnsubShipAlertOfSpeed,
+    SearchSubShipAlertOfSpeed,
+
     AddFleet,
     UpdateFleet,
     GetFleet,
